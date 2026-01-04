@@ -1,47 +1,162 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <title>ByQ & Gaspard</title>
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: white;
-        }
-        .logo {
-            text-align: center;
-            padding: 40px 60px;
-            border-radius: 20px;
-            background: rgba(0,0,0,0.35);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
-        .logo h1 {
-            font-size: 64px;
-            margin: 0;
-            letter-spacing: 3px;
-        }
-        .logo span {
-            display: block;
-            margin-top: 10px;
-            font-size: 18px;
-            opacity: 0.8;
-            letter-spacing: 2px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>568 LABEL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0; padding: 0; height: 100%;
+      font-family: 'Orbitron', sans-serif;
+      color: #fff; background: #000; overflow-x: hidden;
+    }
+    .beats {
+      position: fixed; inset: 0; z-index: 0;
+      background-image: repeating-linear-gradient(
+        90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.06) 2px, transparent 2px, transparent 22px
+      );
+      animation: moveBeats 6s linear infinite;
+    }
+    @keyframes moveBeats { from {background-position:0 0;} to {background-position:240px 0;} }
+    .container {
+      position: relative; z-index: 1; min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 80px 20px;
+    }
+    .logo {
+      text-align: center; padding: 50px 80px; border-radius: 26px;
+      background: rgba(0,0,0,0.65);
+      box-shadow: 0 0 60px rgba(255,255,255,0.2);
+      animation: pulse 2.5s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 30px rgba(255,255,255,0.2); }
+      50% { box-shadow: 0 0 90px rgba(255,255,255,0.45); }
+      100% { box-shadow: 0 0 30px rgba(255,255,255,0.2); }
+    }
+    .logo h1 { font-size: 72px; margin: 0; letter-spacing: 6px; }
+    .logo p { margin-top: 16px; font-size: 18px; letter-spacing: 4px; opacity: .9; }
+    .icons { margin-top: 22px; font-size: 30px; }
+    .links { margin-top: 26px; }
+    .yt {
+      display: inline-block; padding: 12px 18px; border-radius: 14px;
+      background: #ff0000; color: #fff; text-decoration: none; letter-spacing: 2px;
+      box-shadow: 0 10px 30px rgba(255,0,0,.35);
+    }
+    .artists {
+      margin-top: 90px; max-width: 900px; width: 100%; text-align: center;
+    }
+    .artists h2 { font-size: 42px; letter-spacing: 4px; margin-bottom: 40px; }
+    .artist-cards {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 30px;
+    }
+    .artist {
+      background: rgba(0,0,0,.6); border-radius: 22px; padding: 30px 25px;
+      box-shadow: 0 0 40px rgba(255,255,255,.15);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .artist:hover { transform: translateY(-8px); box-shadow: 0 0 70px rgba(255,255,255,.35); }
+    .artist h3 { font-size: 28px; margin-bottom: 10px; letter-spacing: 3px; }
+    .artist span { font-size: 14px; letter-spacing: 2px; opacity: .85; display:block; }
+    #intro {
+      position: fixed; inset: 0; background: #000; z-index: 5;
+      display: flex; align-items: center; justify-content: center; flex-direction: column;
+      animation: fadeOut 1.2s ease forwards; animation-delay: 6.5s;
+    }
+    #intro h1 { letter-spacing: 10px; font-size: 64px; margin-bottom: 10px; }
+    #intro p { opacity: .8; letter-spacing: 4px; }
+    @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
+    .enter {
+      margin-top: 22px; padding: 10px 16px; border-radius: 12px; border: 1px solid #444;
+      background: transparent; color: #fff; cursor: pointer; letter-spacing: 2px;
+    }
+  </style>
 </head>
 <body>
+  <div id="intro">
+    <h1>568 LABEL</h1>
+    <p>DRILL INTRO</p>
+    <button class="enter" id="enterBtn">ENTER</button>
+  </div>
+
+  <div class="beats"></div>
+
+  <div class="container">
     <div class="logo">
-        <h1>ByQ &amp; Gaspard</h1>
-        <span>Official Website</span>
+      <h1>568 LABEL</h1>
+      <p>Rap • Beats • Studio Vibes</p>
+      <div class="icons">🎤 🎧 🎹</div>
+      <div class="links">
+        <a class="yt" href="https://www.youtube.com/@byq4512" target="_blank" rel="noopener">YouTube @byq4512</a>
+      </div>
     </div>
+
+    <section class="artists">
+      <h2>ARTYŚCI</h2>
+      <div class="artist-cards">
+        <div class="artist">
+          <h3>ByQ</h3>
+          <span>Założyciel • Rapper • Producent</span>
+        </div>
+        <div class="artist">
+          <h3>Gaspard</h3>
+          <span>Rapper • Teksty • Vibe</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    const ctx = new AudioCtx();
+    function kick(time){
+      const o = ctx.createOscillator();
+      const g = ctx.createGain();
+      o.type = 'sine';
+      o.frequency.setValueAtTime(150, time);
+      o.frequency.exponentialRampToValueAtTime(40, time + 0.15);
+      g.gain.setValueAtTime(1, time);
+      g.gain.exponentialRampToValueAtTime(0.001, time + 0.15);
+      o.connect(g).connect(ctx.destination);
+      o.start(time); o.stop(time + 0.16);
+    }
+    function hat(time){
+      const buffer = ctx.createBuffer(1, ctx.sampleRate * 0.05, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for(let i=0;i<data.length;i++) data[i] = Math.random()*2-1;
+      const noise = ctx.createBufferSource(); noise.buffer = buffer;
+      const hp = ctx.createBiquadFilter(); hp.type='highpass'; hp.frequency.value=8000;
+      const g = ctx.createGain(); g.gain.value = 0.25;
+      noise.connect(hp).connect(g).connect(ctx.destination);
+      noise.start(time); noise.stop(time + 0.05);
+    }
+    function bass(time){
+      const o = ctx.createOscillator(); const g = ctx.createGain();
+      o.type='square'; o.frequency.value=55;
+      g.gain.setValueAtTime(0.6, time);
+      g.gain.exponentialRampToValueAtTime(0.001, time+0.4);
+      o.connect(g).connect(ctx.destination);
+      o.start(time); o.stop(time+0.45);
+    }
+    function playIntro(){
+      const start = ctx.currentTime + 0.05;
+      const bpm = 140; const step = 60/bpm/2;
+      for(let i=0;i<16;i++){
+        const t = start + i*step;
+        kick(t);
+        if(i%2===0) bass(t);
+        hat(t + step/2);
+      }
+    }
+    const enterBtn = document.getElementById('enterBtn');
+    enterBtn.addEventListener('click', async () => {
+      if (ctx.state !== 'running') await ctx.resume();
+      playIntro();
+      document.getElementById('intro').style.animationPlayState='running';
+    });
+    document.body.addEventListener('click', async () => {
+      if (ctx.state !== 'running') await ctx.resume();
+    }, { once:true });
+  </script>
 </body>
 </html>
